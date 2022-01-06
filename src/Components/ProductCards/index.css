@@ -1,0 +1,39 @@
+.cardText2{
+    display: inline !important;
+}
+.productCard {
+    width: 260px;
+    margin-right: 15px;
+    height: 350px;
+    margin-top: 20px;
+    border: none !important;
+    transition-duration: .3s;
+}
+.productCard:hover{
+    box-shadow: 2px 8px 6px rgb(189, 185, 185);
+    /* transform: scale(1.1); */
+    margin-top:10px ;
+    border-radius: 10px 0px 15px 0px;
+    /* color: white; */
+    /* background-color: #2d4bc5; */
+}
+.cardText{
+    color: black;
+    background-color: #fff;
+    transition-property: all;
+    transition-duration: .3s;
+    cursor: pointer;
+}
+.cardBody{
+background-color: none;
+transition-duration: .8s;
+
+}
+.cardBody:hover{
+
+}
+
+/*}
+.sellerCard:hover{
+    box-shadow: 2px 8px 6px rgb(189, 185, 185);
+    /* transform: scale(1.1); */

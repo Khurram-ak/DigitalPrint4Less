@@ -1,0 +1,7 @@
+.brandContainer {
+    height: 250px;
+    padding: 15px;
+    border-radius: 0px;
+    background: #ffffff;
+    box-shadow: 2px 2px 15px #969595, 0px 1px 9px #969494
+}

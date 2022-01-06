@@ -1,0 +1,26 @@
+.navLogo {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: auto
+}
+
+.logoImg {
+    width: 400px;
+    height: 120px;
+
+}
+
+.navContact {
+    display: flex;
+    height: 120px;
+}
+.navContact img{
+    height: 50%;
+    /* width: 50%; */
+}
+.contactCol{
+    display: flex !important;
+    align-items: center !important;
+}
+

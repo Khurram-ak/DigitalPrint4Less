@@ -1,0 +1,23 @@
+.cardText2{
+    display: inline !important;
+}
+.sellerCard {
+    width: 260px;
+    margin-right: 15px;
+    height: 430px;
+    margin-top: 20px;
+    border: none !important;
+    transition-duration: .3s;
+}
+.sellerCard:hover{
+    box-shadow: 2px 8px 6px rgb(189, 185, 185);
+    /* transform: scale(1.1); */
+    margin-top:10px ;
+}
+.cardText{
+    color: black;
+    background-color: #fff;
+    transition-property: all;
+    transition-duration: .3s;
+    cursor: pointer;
+}

@@ -1,0 +1,22 @@
+.serviceBox {
+    display: flex;
+    /* justify-content: center; */
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.creativeBtn {
+    text-decoration: none;
+    outline: none;
+    border: none;
+    padding: 12px 14px !important;
+    font-family: 'sharpsans1';
+    background: #005f9e !important;
+    color: white;
+    font-weight: 600 !important;
+}
+.visionImg{
+    border-radius: 8px;
+    width: 400px ;
+}
