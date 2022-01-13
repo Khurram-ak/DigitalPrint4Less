@@ -22,12 +22,12 @@ export default function DesignServices() {
                         </Button>
                     </div>
                 </Col>
-                <Col md='1' style={{ display: 'flex', justifyContent: "", alignItems: 'center' }}>
-                    <div style={{ height: "208px", border: "1px solid #b7b7b7" }}>
+                <Col md='1'  style={{ display: 'flex', justifyContent: "", alignItems: 'center' }}>
+                    <div className="separationLine" style={{ height: "208px", border: "1px solid #b7b7b7" }}>
 
                     </div>
                 </Col>
-                <Col md='5' style={{ display: 'flex', justifyContent: "", alignItems: "center" }}>
+                <Col md='5' style={{ display: 'flex', justifyContent: "center", alignItems: "center",border:"1px solid black" }}>
                     <img className="designImg" src={designImage} alt="img" />
                 </Col>
             </Row>

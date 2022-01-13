@@ -14,7 +14,7 @@ import video4 from '../../assests/video4.mp4'
 export default function Footer() {
 
     return <>
-        <Container fluid style={{ backgroundColor: "lightgray", height: "390px" }} >
+        <Container fluid style={{ backgroundColor: "#EDEDED", height: "auto" }} >
             <Row style={{ width: "95%", margin: 'auto', padding: "15px 0px" }} >
                 <Col md='3' >
                     <h6 style={{ marginBottom: "10px" }}>WATCH OUR TV COMMERCIAL</h6>

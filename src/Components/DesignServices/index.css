@@ -3,6 +3,7 @@
     /* justify-content: center; */
     flex-direction: column;
     align-items: center;
+    border:"1px solid black"
 
 }
 
@@ -19,3 +20,13 @@
 .designImg{
     width: 400px ;
 }
+
+@media screen and (max-width:1200px) {
+    .separationLine{
+        border: 2px solid blue;
+        display: none !important;
+    }
+    .serviceBox{
+    }
+}
+

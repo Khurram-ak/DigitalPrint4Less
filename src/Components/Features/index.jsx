@@ -8,19 +8,18 @@ import review from "../../assests/review.png"
 export default function Features() {
 
     return <>
-        <Container fluid style={{ backgroundColor: "#EDEDED", height: "610px", }}>
-            <Row style={{ height: "120px" }}>
+        <Container fluid style={{ backgroundColor: "#EDEDED", height: "auto", }}>
+         
+            <Row style={{ height: "auto",padding:"18px 0px" }}>
                 <Col style={{ display: "flex", justifyContent: "center", flexDirection: "column", alignItems: "center" }}>
                     <h5>WE’RE HERE TO HELP</h5>
                     <h4>Incredible Service. All-inclusive Pricing. Real Love.</h4>
                 </Col>
-
-
             </Row>
             <Row className="featureRow">
-                <Col md='4' style={{height:"328px"}} >
+                <Col md='4' style={{paddingBottom:"34px"}} >
                     <div className="featureCard">
-                        <Card >
+                        <Card style={{height:"565px",}}>
                             <CardHeader style={{ textAlign: "center", fontFamily: "sharpsans1" }}>
                                 Talk to a Real Person
                             </CardHeader>
@@ -67,9 +66,9 @@ export default function Features() {
                     </div>
                 </Col>
                 
-                <Col md='4'style={{height:"328px"}} >
+                <Col md='4'style={{paddingBottom:"34px"}} >
                     <div className="featureCard">
-                        <Card >
+                        <Card style={{height:"565px",}} >
                             <CardHeader style={{ textAlign: "center", fontFamily: "sharpsans1" }}>
                             Live And Uncensored
                             </CardHeader>
@@ -102,9 +101,9 @@ export default function Features() {
                         </Card>
                     </div>
                 </Col>
-                <Col md='4'style={{height:"328px"}} >
+                <Col md='4'style={{paddingBottom:"34px"}} >
                     <div className="featureCard">
-                        <Card >
+                        <Card style={{height:"565px",}} >
                             <CardHeader style={{ textAlign: "center", fontFamily: "sharpsans1" }}>
                                 All-in Pricing
                             </CardHeader>
