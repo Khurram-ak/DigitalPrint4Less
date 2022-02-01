@@ -1,0 +1,106 @@
+.column {
+    /* height: auto; */
+    max-height: 680px !important;
+    width: auto !important;
+    font-size: 13px;
+    font-weight: 600 !important;
+    background-color: #F9F9F9;
+    border: 2px solid rgb(206, 198, 198);
+}
+
+.subColumn {
+    padding: 0px 20px !important;
+    max-height: 600px !important;
+    max-width: 500px !important;
+    font-size: 12px;
+    margin-top: 10px;
+    font-weight: 600 !important;
+    background-color: #F9F9F9;
+    border: 2px solid rgb(206, 198, 198);
+    margin-left: -2px !important;
+    font-family: 'sharpsans1';
+
+    /* border: 2px solid black; */
+    overflow: auto !important;
+}
+
+.menuItem p {
+    font-size: 11px;
+    /* font-weight: 800 !important; */
+}
+
+.menuItem {
+    cursor: pointer;
+    /* margin-top: -5px; */
+    /* border: 1px solid black; */
+    height: auto !important;
+    padding-right: 60px !important;
+    padding-top: 20px;
+    height: 50px !important;
+    flex: 1;
+    padding-left: 10px !important;
+    color: #212020;
+    font-family: 'sharpsans2';
+    font-size: 12px;
+}
+
+/* width */
+
+.subColumn::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+
+.subColumn::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+
+.subColumn::-webkit-scrollbar-thumb {
+    background: rgb(184, 177, 177);
+    border-radius: 8px !important;
+}
+
+/* Handle on hover */
+
+.subColumn::-webkit-scrollbar-thumb:hover {
+    border-radius: 8px !important;
+    background: #555;
+}
+
+.CompanymenuItem {
+    cursor: pointer;
+    height: auto !important;
+    padding-right: 20px !important;
+    padding-top: 20px;
+    height: 50px !important;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    /* flex: 1; */
+}
+
+.menuItem2 {
+    cursor: pointer;
+    height: auto !important;
+    padding-right: 60px !important;
+    padding-top: 20px;
+    padding-left: 20px;
+    height: 50px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+}
+
+.hoverCategory:hover {
+    background-color: rgb(243, 231, 231);
+}
+
+.arrow {
+    display: flex;
+    align-items: center;
+    margin-right: 10px !important;
+}

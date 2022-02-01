@@ -1,0 +1,35 @@
+
+  .cartImg {
+      border: 10px solid blue !important;
+      height: 500px !important;
+  }
+ 
+  .image-gallery-slide .image-gallery-image{
+    width:600px !important;
+    height: 500px !important;
+  }
+  .sizeBox {
+      height: 50px;
+      width: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid lightgray;
+      background-color: #F9F9F9;
+      border-radius: 4px;
+      margin: 0px 7px;
+      cursor: pointer;
+  }
+ 
+  .colorBox {
+      cursor: pointer;
+      height: 50px;
+      width: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 4px;
+      margin: 0px 7px;
+  }
+ 
+   

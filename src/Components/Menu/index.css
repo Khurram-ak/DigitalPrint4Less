@@ -1,0 +1,18 @@
+.position {
+    position: fixed !important;
+    top: 212px;
+    left: 179px !important;
+    z-index: 20;
+}
+.menu {
+    /* border: 1px solid black !important; */
+    /* height: 80px; */
+    display: flex;
+    align-items: center;
+    font-family: "Open Sans" !important;
+    font-size: 13px;
+    color: black !important;
+    cursor: pointer;
+    padding: 0px 12px;
+    font-weight: 600;
+}

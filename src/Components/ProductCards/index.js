@@ -1,10 +1,14 @@
 
-import { Card, CardGroup, CardImg, CardBody, CardSubtitle, CardText, CardTitle } from "reactstrap"
+import { Card, CardGroup, CardImg, CardBody, CardSubtitle,  CardTitle } from "reactstrap"
 import "./index.css"
+import { useNavigate } from "react-router-dom";
 
 export default function ProductCard({image}) {
+    const navigate=useNavigate()
+
+
     return <>
-        <CardGroup>
+        <CardGroup onClick={()=>navigate('/detailPage')} >
             <Card className="productCard  cardText">
                 <CardImg
                     alt="Card image cap"

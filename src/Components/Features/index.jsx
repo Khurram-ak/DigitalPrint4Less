@@ -1,5 +1,5 @@
 import { Container, Row, Col } from "reactstrap";
-import { Card, CardHeader, CardImg, CardBody, CardSubtitle, CardText, CardTitle } from "reactstrap"
+import { Card, CardHeader, CardImg, CardBody, CardText, CardTitle } from "reactstrap"
 import "./index.css"
 import headphone2 from "../../assests/headphone2.png"
 import email from "../../assests/email.png"
@@ -12,8 +12,8 @@ export default function Features() {
          
             <Row style={{ height: "auto",padding:"18px 0px" }}>
                 <Col style={{ display: "flex", justifyContent: "center", flexDirection: "column", alignItems: "center" }}>
-                    <h5>WE’RE HERE TO HELP</h5>
-                    <h4>Incredible Service. All-inclusive Pricing. Real Love.</h4>
+                    <h5 style={{fontFamily:"sharpsans2"}}>WE’RE HERE TO HELP</h5>
+                    <h4 style={{fontFamily:"sharpsans2"}}>Incredible Service. All-inclusive Pricing. Real Love.</h4>
                 </Col>
             </Row>
             <Row className="featureRow">

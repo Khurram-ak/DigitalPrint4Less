@@ -1,9 +1,9 @@
 import Menu from "../../Components/Menu";
 import Navbar from "../../Components/Navbar";
 import Footer from "../../Components/Footer";
-import DetailPageBody from "../../Components/DetailPageBody";
+import SubCategoryBody from "../../Components/SubCategoryBody";
 
-export default function DetailPage() {
+export default function SubCategoryPage() {
     
  
 
@@ -12,7 +12,7 @@ export default function DetailPage() {
             <Navbar />
             <br></br>
             <Menu />
-            <DetailPageBody/>
+            <SubCategoryBody/>
             <br></br>
             <Footer />
         </>

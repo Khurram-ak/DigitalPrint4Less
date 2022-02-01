@@ -15,7 +15,7 @@ export default function Home() {
 
     const navigate = useNavigate()
 
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(false)
     setTimeout(() => {
         setLoading(true)
 

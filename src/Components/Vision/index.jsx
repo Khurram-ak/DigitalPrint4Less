@@ -1,6 +1,5 @@
-import { Container, Col, Row, Button } from "reactstrap";
+import { Container, Col, Row,  } from "reactstrap";
 import './index.css'
-import logo2 from '../../assests/logo2.png'
 import mission from '../../assests/mission.jpg'
 
 export default function DesignServices() {

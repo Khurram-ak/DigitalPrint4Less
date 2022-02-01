@@ -27,7 +27,7 @@ export default function DesignServices() {
 
                     </div>
                 </Col>
-                <Col md='5' style={{ display: 'flex', justifyContent: "center", alignItems: "center",border:"1px solid black" }}>
+                <Col md='5' style={{ display: 'flex', justifyContent: "center", alignItems: "center", }}>
                     <img className="designImg" src={designImage} alt="img" />
                 </Col>
             </Row>
