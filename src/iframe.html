@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    #overlay {
+        position: fixed;
+        /* Sit on top of the page content */
+        display: none;
+        /* Hidden by default */
+        width: 510px;
+        /* Full width (cover the whole page) */
+        height: 510px;
+        /* Full height (cover the whole page) */
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 1);
+        /* Black background with opacity */
+        z-index: 2;
+        /* Specify a stack order in case you're using a different order for other elements */
+        cursor: pointer;
+        /* Add a pointer on hover */
+    }
+
+    .iframe {
+        height: 500px !important;
+        width: 500px !important;
+    }
+</style>
+
+<body>
+
+    <img onclick="off()" src="./assests/banner1.jpg" id="overlay" alt="">
+    <div>
+        <iframe src="https://123zcast.com/embed.php?player=desktop&v=skysmixx&vw=100%&vh=520" class="iframe"
+            frameborder="0"></iframe>
+    </div>
+
+    <button onclick="on()">Turn on overlay effect</button>
+
+</body>
+
+<script>
+    function on() {
+        document.getElementById("overlay").style.display = "block";
+    }
+
+    function off() {
+        document.getElementById("overlay").style.display = "none";
+    }
+</script>
+
+</html>

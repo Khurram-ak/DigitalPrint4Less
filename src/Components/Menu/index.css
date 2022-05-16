@@ -1,7 +1,7 @@
 .position {
     position: fixed !important;
-    top: 212px;
-    left: 179px !important;
+     top: 222px;
+    /*left: 219px !important; */
     z-index: 20;
 }
 .menu {
@@ -15,4 +15,6 @@
     cursor: pointer;
     padding: 0px 12px;
     font-weight: 600;
+    width: 100% !important;
 }
+

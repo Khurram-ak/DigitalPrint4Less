@@ -1,5 +1,5 @@
 import { Container, Row, Col } from "reactstrap";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
@@ -16,7 +16,7 @@ import sample2 from '../../assests/sample2.png'
 import sample3 from '../../assests/sample3.png'
 import sample4 from '../../assests/sample4.png'
 
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 
 import List from '@mui/material/List';
@@ -26,6 +26,7 @@ import Collapse from '@mui/material/Collapse';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import Checkbox from '@mui/material/Checkbox';
+import axios from "axios";
 
 
 
@@ -34,14 +35,14 @@ import Checkbox from '@mui/material/Checkbox';
 
 
 export default function SubCategoryBody() {
-
     const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
     const [openType, setOpenType] = useState(true);
     const [openFeature, setOpenFeature] = useState(true);
     const [openBrand, setOpenBrand] = useState(true);
     const [openMaterial, setOpenMaterial] = useState(true);
+    const [subCategorySku, setSubCategorySku] = useState([]);
 
-    const navigate=useNavigate()
+    const navigate = useNavigate()
 
     const handleClick = (inputName) => {
         if (inputName === 'type') {
@@ -58,6 +59,17 @@ export default function SubCategoryBody() {
         }
 
     }
+    let { subCategoryId } = useParams();
+    useEffect(() => {
+        subCategoryId &&
+            axios.get(`http:///app.ghaarsay.com/sku/GetSkuBySubCat_CustomerPage?page=1&pageSize=10&companyID=0c5bd553-46c5-440d-8c5a-5ba3353dbf48&subCatID=${subCategoryId}`)
+                .then((response) => {
+                    console.log('SUBSKUUUU',response.data)
+                    setSubCategorySku(response.data.data)
+                });
+
+    }, [subCategoryId])
+ 
 
     return <>
 
@@ -226,17 +238,11 @@ export default function SubCategoryBody() {
                 <Col md="9">
                     <Row>
                         <Col style={{ display: "flex", flexWrap: "wrap", justifyContent: 'center' }}>
-                            <ProductCard image={sample2} />
-                            <ProductCard image={sample4} />
-                            <ProductCard image={sample3} />
-                            <ProductCard image={sample2} />
-                            <ProductCard image={sample} />
-                            <ProductCard image={sample3} />
-                            <ProductCard image={sample4} />
-                            <ProductCard image={sample} />
-                            <ProductCard image={sample2} />
-                            <ProductCard image={sample3} />
-
+                            {
+                                subCategorySku.map(item => {
+                                    return <ProductCard skuList={item} />
+                                })
+                            }
 
 
                         </Col>

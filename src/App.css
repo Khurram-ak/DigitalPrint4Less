@@ -21,6 +21,8 @@
     src: url(./assests/Fonts/samsungsharpsans-bold.otf)
 }
 
+
+
 /* Navbar */
 .headerTop {
     font-size: 12px;
@@ -52,3 +54,13 @@
     font-weight: 700;
     font-family: 'open sans' !important;
 }
+
+/*Banners */
+/* .bannerHeigth{
+    border: dotted;
+    height: 280px !important;
+} */
+.carousel-item  img { 
+    height: 550px !important;
+    width: 100% !important; 
+  }

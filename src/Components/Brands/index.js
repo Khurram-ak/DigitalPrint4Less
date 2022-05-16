@@ -2,17 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Container, Row, Col } from 'reactstrap'
 import Fade from "react-reveal"
 import Gallery from '../ProductGallery'
-
-import brand1 from "../../assests/brand1.png"
-import brand2 from "../../assests/brand2.png"
-import brand3 from "../../assests/brand3.png"
-import brand4 from "../../assests/brand4.png"
-import brand5 from "../../assests/brand5.png"
-import brand6 from "../../assests/brand6.png"
-import brand7 from "../../assests/brand7.png"
-import brand8 from "../../assests/brand8.png"
-import brand9 from "../../assests/brand9.png"
-import brand10 from "../../assests/brand10.png"
+ 
 import brand11 from "../../assests/brand11.png"
 
 import "./index.css"
@@ -20,9 +10,20 @@ import "./index.css"
 
 export default function Brands() {
 
-    const images = [brand1, brand9, brand3, brand5, brand7, brand9, brand2, brand4, brand6, brand7, brand9, brand8, brand10, brand11,]
+    const [brands,setBrands]=useState()
+    const brandObj=[]
 
+    useEffect(()=>{
+        fetch('http://app.ghaarsay.com/Brand/GetBrands_CustomerPage?companyID=0c5bd553-46c5-440d-8c5a-5ba3353dbf48')
+        .then(res=>res.json())
+        .then(res=>{
+            console.log(res.data);
+            setBrands(res.data)})
 
+    },[])
+
+    brands && brands.map(item=>brandObj.push({image: item.BImageURL,name:item.BrandName}))
+    // brands && brands.map(item=>brandName.push(item.BrandName))
 
     return <>
         <br></br>
@@ -31,7 +32,7 @@ export default function Brands() {
                 <Col >
                     <>
                         <Fade top duration={3000}>
-                            <h3 style={{ textAlign: "center", fontFamily: "SharpSans2" }} >Top Rated Brands</h3>
+                            <h3 style={{ textAlign: "center", fontFamily:"SharpSans2" }} >Top Rated Brands</h3>
                         </Fade>
                         <br></br>
                     </>
@@ -42,7 +43,8 @@ export default function Brands() {
             </Row>
             <Row>
                 <Col>
-                    <Gallery cols={7} row={1} images={images} type="brand" gap={20} />
+
+                    <Gallery cols={7} row={1}  brandObj={brandObj} type="brand" gap={20} />
 
                 </Col>
 
