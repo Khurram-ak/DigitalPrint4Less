@@ -15,42 +15,25 @@ import axios from "axios";
 
 
 export default function DetailPageBody() {
+    let images = [];
+
 
     let { skuId } = useParams();
 
     const [skuDetails, setSkuDetails] = useState([]);
+    const [skuImages, setSkuImages] = useState([]);
 
     useEffect(() => {
 
         axios.get(`http:///app.ghaarsay.com/sku/GetSkuDetail_CustomerPage?companyID=0c5bd553-46c5-440d-8c5a-5ba3353dbf48&SkuID=${skuId}`)
             .then((response) => {
-                setSkuDetails(response.data)
+
+                setSkuDetails(response.data.data)
+                response.data.data.SKUImages.map(item => images.push({ original: item.ImagePath, thumbnail: item.ImagePath }))
+                setSkuImages(images)
             });
 
     }, [])
-
-    const images = [
-        {
-            original: sample,
-            thumbnail: sample,
-        },
-    ];
-    // console.log("AAAAA", skuDetails?.data)
-    // skuDetails && skuDetails.data.SKUImages?.map(item => images.push({
-    //     original: item.ImagePath,
-    //     thumbnail: item.ImagePath
-    // })
-    // )
-
-
-    // console.log(skuDetails)
-    // skuDetails && skuDetails.data.SKUImages.map((item, index) => images.push({
-    //     original: item.ImagePath,
-    //     thumbnail: item.ImagePathThumbNail
-    // }))
-
-
-
 
     return <>
         <div style={{ borderTop: "1px solid lightgray" }}></div>
@@ -60,7 +43,7 @@ export default function DetailPageBody() {
                 <Col lg="6" style={{ display: "flex", justifyContent: "center", alignItems: 'center' }}  >
                     <ImageGallery
                         className="cartImg"
-                        items={images}
+                        items={skuImages}
                         // height='1500px'
                         sizes={5500}
                         thumbnailWidth={400}
@@ -74,9 +57,9 @@ export default function DetailPageBody() {
 
                 {/* <img style={{ height: '525px', width: "350px", }} src={data?.SKUImages[0]?.ImagePath} alt='1'  */}
                 <Col lg="6" style={{ padding: "20px", }}>
-                    <h3 style={{ fontFamily: "sharpsans2" }}>{skuDetails?.data.SKUCode}</h3>
-                    <p style={{ color: "gray", fontFamily: "roboto" }}>{skuDetails?.data.SKUDescription}  </p>
-                    <h4 style={{ fontFamily: "sharpsans2" }}> Price:${skuDetails?.data.SalesPrice}  </h4><br></br>
+                    <h3 style={{ fontFamily: "sharpsans2" }}>{skuDetails && skuDetails.SKUCode}</h3>
+                    <p style={{ color: "gray", fontFamily: "roboto" }}>{skuDetails.SKUDescription}  </p>
+                    <h4 style={{ fontFamily: "sharpsans2" }}> Price:${skuDetails.SalesPrice}  </h4><br></br>
                     <h3 style={{ fontSize: "21px", fontFamily: "sharpsans2" }}>Available Size: </h3>
 
                     <div style={{ display: 'flex' }}>
