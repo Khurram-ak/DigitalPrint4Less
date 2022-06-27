@@ -29,11 +29,6 @@ import Checkbox from '@mui/material/Checkbox';
 import axios from "axios";
 
 
-
-
-
-
-
 export default function SubCategoryBody() {
     const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
     const [openType, setOpenType] = useState(true);
@@ -64,7 +59,6 @@ export default function SubCategoryBody() {
         subCategoryId &&
             axios.get(`http:///app.ghaarsay.com/sku/GetSkuBySubCat_CustomerPage?page=1&pageSize=10&companyID=0c5bd553-46c5-440d-8c5a-5ba3353dbf48&subCatID=${subCategoryId}`)
                 .then((response) => {
-                    console.log('SUBSKUUUU',response.data)
                     setSubCategorySku(response.data.data)
                 });
 

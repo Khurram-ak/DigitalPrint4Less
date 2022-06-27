@@ -20,7 +20,17 @@
       margin: 0px 7px;
       cursor: pointer;
   }
- 
+  .qouteBtn {
+    border: none !important;
+    background: #212121;
+    padding: 13px 15px!important;
+    color: white !important;
+    border-radius: 5px;
+    font-family: 'roboto';
+    font-weight: 700;
+    text-decoration: none !important;
+    width: 100%;
+}
   .colorBox {
       cursor: pointer;
       height: 50px;

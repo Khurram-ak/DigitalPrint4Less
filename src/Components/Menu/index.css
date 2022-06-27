@@ -17,4 +17,19 @@
     font-weight: 600;
     width: 100% !important;
 }
-
+.css-18ped5m{
+}
+.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input{
+    width: 310px !important;
+}
+.signInBtn{
+    width: 338px;
+    height: 58px;
+    border: none;
+    text-decoration: none;
+    border-radius: 12px 12px 12px 12px;
+    background-color: #0020A2;
+    color: white;
+    font-size: 20px;
+    font-family: 'SharpSans2';
+}

@@ -8,16 +8,36 @@ import sample2 from '../../assests/sample2.png'
 import sample3 from '../../assests/sample3.png'
 import sample4 from '../../assests/sample4.png'
 
+
 import "react-image-gallery/styles/css/image-gallery.css";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import QouteModal from "../QouteModal";
 
+import Box from '@mui/material/Box';
+import Modal from '@mui/material/Modal';
 
 export default function DetailPageBody() {
     let images = [];
 
+    const [open, setOpen] = useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
 
+    const style = {
+
+        borderRadius: '7px',
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: 420,
+        bgcolor: 'background.paper',
+        border: '2px solid #000',
+        boxShadow: 24,
+        p: 4,
+    };
     let { skuId } = useParams();
 
     const [skuDetails, setSkuDetails] = useState([]);
@@ -79,33 +99,98 @@ export default function DetailPageBody() {
 
                     </div>
                     <br></br>
-                    <h3 style={{ fontSize: "21px", fontFamily: "sharpsans2" }}>Color: </h3>
-                    <div style={{ display: 'flex' }}>
-                        <div className='colorBox' style={{ backgroundColor: 'Blue' }} >
+                    <h3 style={{ fontSize: "21px", fontFamily: "sharpsans2" }}>Available Colors: </h3>
+                    <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+                        <div className='colorBox' style={{ marginTop: "5px", backgroundColor: 'Blue' }} >
 
                         </div>
-                        <div className='colorBox' style={{ backgroundColor: 'Red' }} >
+                        <div className='colorBox' style={{ marginTop: "5px", backgroundColor: 'Red' }} >
 
                         </div>
-                        <div className='colorBox' style={{ backgroundColor: 'Aqua' }} >
+                        <div className='colorBox' style={{ marginTop: "5px", backgroundColor: 'Aqua' }} >
+
+                        </div>
+                        <div className='colorBox' style={{ marginTop: "5px", backgroundColor: 'purple' }} >
+
+                        </div>
+                        <div className='colorBox' style={{ marginTop: "5px", backgroundColor: 'gray' }} >
+
+                        </div>
+                        <div className='colorBox' style={{ marginTop: "5px", backgroundColor: 'yellow' }} >
+
+                        </div>
+                        <div className='colorBox' style={{ marginTop: "5px", backgroundColor: 'Red' }} >
+
+                        </div>
+                        <div className='colorBox' style={{ marginTop: "5px", backgroundColor: 'Aqua' }} >
+
+                        </div>
+                        <div className='colorBox' style={{ marginTop: "5px", backgroundColor: 'purple' }} >
+
+                        </div>
+                        <div className='colorBox' style={{ marginTop: "5px", backgroundColor: 'gray' }} >
+
+                        </div>
+                        <div className='colorBox' style={{ marginTop: "5px", backgroundColor: 'yellow' }} >
+
+                        </div>
+                        <div className='colorBox' style={{ marginTop: "5px", backgroundColor: 'Red' }} >
+
+                        </div>
+                        <div className='colorBox' style={{ marginTop: "5px", backgroundColor: 'Aqua' }} >
+
+                        </div>
+                        <div className='colorBox' style={{ marginTop: "5px", backgroundColor: 'purple' }} >
+
+                        </div>
+                        <div className='colorBox' style={{ marginTop: "5px", backgroundColor: 'gray' }} >
+
+                        </div>
+                        <div className='colorBox' style={{ marginTop: "5px", backgroundColor: 'yellow' }} >
 
                         </div>
 
 
                     </div>
                     <br></br>
-
+                    <br></br>
+                    <br></br>
+                    <Row >
+                        <Col md='6' >
+                            <div>
+                                <button className="qouteBtn">START DESIGNING</button>
+                            </div>
+                        </Col>
+                        <Col md='6' >
+                            <div>
+                                <button onClick={handleOpen} className="qouteBtn">Get A Qoute</button>
+                                <Modal
+                                    open={open}
+                                    onClose={handleClose}
+                                    aria-labelledby="modal-modal-title"
+                                    aria-describedby="modal-modal-description"
+                                >
+                                    <Box sx={style} style={{ height: "500", border: "none" }}>
+                                        <QouteModal />
+                                    </Box>
+                                </Modal>
+                            </div>
+                        </Col>
+                    </Row>
                 </Col>
             </Row>
         </Container>
 
+
+
+
+
+
         <Container fluid >
             <Row>
                 <Col md='6' style={{ height: "25px", backgroundColor: "#0020A2" }}>
-
                 </Col>
                 <Col md='6' style={{ height: "25px", backgroundColor: "#161515" }}>
-
                 </Col>
             </Row>
         </Container>
