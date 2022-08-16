@@ -8,14 +8,12 @@ import sample3 from '../../assests/sample3.png'
 
 export default function ProductCard({ skuList }) {
     const navigate = useNavigate()
-    // ('skuItems==============', skuList.SKUImages.map(item=>('aasdasdasd',item.ImagePath)));
     console.log('skusss',skuList);
+    
     const [skuImage, setSkuImage] = useState('')
     const [productId, setProductId] = useState('')
 
     useEffect(() => {
-        setSkuImage(skuList.SKUImages.map(item=>item.ImagePath))
-        setProductId(skuList.ID)
     }, [skuList])
 
 
@@ -27,21 +25,24 @@ export default function ProductCard({ skuList }) {
             <Card className="productCard  cardText">
                 <CardImg
                     alt="Card image cap"
-                    src={skuImage || sample3}
+                    src={skuList.fronT_MODEL_IMAGE_URL}
                     top
                     width="100%"
                     height='250px'
                 />
                 <CardBody  >
-                    <CardTitle style={{ fontFamily: "open sans", fontSize: "19px" }} tag="h5">
-                        {skuList.SKUCode}
+                    <CardTitle style={{ fontFamily: "SharpSansBold", fontSize: "19px",fontWeight:"800",color:"#0020A2" }} tag="h5">
+                        {skuList.stylE_NO}
+                    </CardTitle>
+                    <CardTitle style={{ fontFamily: "open sans", fontSize: "19px",fontWeight:"600" }} tag="h5">
+                        {skuList.producT_TITLE}
                     </CardTitle>
                     <CardSubtitle
-                        style={{ fontFamily: "roboto", fontSize: "15px" }}
+                        style={{ fontFamily: "roboto", fontSize: "17px",fontWeight:"700" }}
                         className="mb-2 text-muted"
                         tag="h6"
                     >
-                        {skuList.SKUDescription}
+                        Price Starting from : ${skuList.piecE_PRICE}
                     </CardSubtitle>
 
 

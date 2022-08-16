@@ -9,11 +9,11 @@ export default function DesignServices() {
 
         <Container style={{ border: "2px solid lightgray", padding: "40px 0px",boxShadow:"1px 2px 17px gray" ,borderRadius:"60px 0px 60px 0px"}}>
             <Row>
-                <Col md='6' style={{ display: 'flex', justifyContent: "center", alignItems: "center" }}>
+                <Col md='6'  style={{ display: 'flex', justifyContent: "center", alignItems: "center" }}>
                     <img className="visionImg" src={mission} alt="img" />
                 </Col>
-                <Col md='1' style={{ display: 'flex', alignItems: 'center' }}>
-                    <div style={{ height: "208px", border: "1px solid #b7b7b7" }}>
+                <Col md='1'  style={{ display: 'flex', justifyContent: " ", alignItems: 'center' }}>
+                    <div className="separationLine" style={{ height: "208px", border: "1px solid #b7b7b7" }}>
 
                     </div>
                 </Col>

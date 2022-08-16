@@ -19,7 +19,7 @@ export default function Features() {
             <Row className="featureRow">
                 <Col md='4' style={{paddingBottom:"34px"}} >
                     <div className="featureCard">
-                        <Card style={{height:"565px",}}>
+                        <Card style={{height:"auto",}}>
                             <CardHeader style={{ textAlign: "center", fontFamily: "sharpsans1" }}>
                                 Talk to a Real Person
                             </CardHeader>
@@ -68,7 +68,7 @@ export default function Features() {
                 
                 <Col md='4'style={{paddingBottom:"34px"}} >
                     <div className="featureCard">
-                        <Card style={{height:"565px",}} >
+                        <Card style={{height:"auto",}} >
                             <CardHeader style={{ textAlign: "center", fontFamily: "sharpsans1" }}>
                             Live And Uncensored
                             </CardHeader>
@@ -103,7 +103,7 @@ export default function Features() {
                 </Col>
                 <Col md='4'style={{paddingBottom:"34px"}} >
                     <div className="featureCard">
-                        <Card style={{height:"565px",}} >
+                        <Card style={{height:"auto",}} >
                             <CardHeader style={{ textAlign: "center", fontFamily: "sharpsans1" }}>
                                 All-in Pricing
                             </CardHeader>

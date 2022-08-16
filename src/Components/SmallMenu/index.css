@@ -1,17 +1,18 @@
 .column {
     /* height: auto; */
-    max-height: 680px !important;
-    width: auto !important;
+    max-height: 395px !important;
+    min-width: 175px !important;
     font-size: 13px;
     font-weight: 600 !important;
     background-color: #F9F9F9;
     border: 1px solid rgb(206, 198, 198);
+    overflow: auto !important;
 }
 
 .subColumn {
     padding: 0px 20px !important;
-    max-height: 600px !important;
-    max-width: 500px !important;
+    max-height: 395px !important;
+    min-width: 175px !important;
     font-size: 12px;
     margin-top: 10px;
     font-weight: 600 !important;
@@ -46,26 +47,26 @@
 
 /* width */
 
-.subColumn::-webkit-scrollbar {
+.column::-webkit-scrollbar {
     width: 10px;
 }
 
 /* Track */
 
-.subColumn::-webkit-scrollbar-track {
+.column::-webkit-scrollbar-track {
     background: #f1f1f1;
 }
 
 /* Handle */
 
-.subColumn::-webkit-scrollbar-thumb {
+.column::-webkit-scrollbar-thumb {
     background: rgb(184, 177, 177);
     border-radius: 8px !important;
 }
 
 /* Handle on hover */
 
-.subColumn::-webkit-scrollbar-thumb:hover {
+.column::-webkit-scrollbar-thumb:hover {
     border-radius: 8px !important;
     background: #555;
 }

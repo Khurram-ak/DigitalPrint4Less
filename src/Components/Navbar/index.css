@@ -25,3 +25,35 @@
     display: flex !important;
     align-items: center !important;
 }
+
+@media screen and (max-width: 596px) {
+    .headerTopL{
+        width: 70% !important;
+        font-size: 14px;
+
+    }
+    .headerTopR{
+        font-size: 14px;
+
+        width: 30% !important;
+    }
+  }
+@media screen and (max-width: 470px) {
+    .headerTopL{
+        font-size: 12px;
+    }
+    .headerTopR{
+        font-size: 12px;
+        
+    }
+  }
+  @media screen and (max-width: 380px) {
+    .headerTopL{
+        font-size: 10px;
+    }
+    .headerTopR{
+        font-size: 10px;
+        
+    }
+  }
+ 

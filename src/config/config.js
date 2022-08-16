@@ -9,6 +9,7 @@ import {
 import Home from "../Screens/Home";
 import DetailPage from "../Screens/DetailPage";
 import SubCategoryPage from "../Screens/SubCategoryPage";
+import UserProfile from "../Screens/UserProfile";
 
 
 export default function Routing() {
@@ -20,7 +21,8 @@ export default function Routing() {
                 <Route path="/" element={<Home />} />
                 <Route path="/home" element={<Home />} />
                 <Route path="/detailPage/:skuId" element={<DetailPage />} />
-                <Route path="/subCategoryPage/:subCategoryId" element={<SubCategoryPage />} />
+                <Route path="/subCategoryPage/:mainCategoryName/:subCategoryName" element={<SubCategoryPage />} />
+                <Route path="/userProfile" element={<UserProfile/>} />
 
             </Routes>
         </Router>

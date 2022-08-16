@@ -1,7 +1,8 @@
 .position {
     position: fixed !important;
-     top: 222px;
+     top: 257px;
     /*left: 219px !important; */
+    min-width: 6rem;
     z-index: 20;
 }
 .menu {
@@ -17,13 +18,25 @@
     font-weight: 600;
     width: 100% !important;
 }
-.css-18ped5m{
-}
+ 
+.logOut {
+    border: none !important;
+    background: #212121;
+    padding: 13px 15px!important;
+    color: white !important;
+    border-radius: 5px;
+    font-family: 'roboto';
+    font-weight: 700;
+    text-decoration: none !important;
+    width: 100%;
+    margin-left: auto;
+} 
 .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input{
     width: 310px !important;
 }
 .signInBtn{
-    width: 338px;
+    margin-top: 10px;
+    width: 100%;
     height: 58px;
     border: none;
     text-decoration: none;
@@ -32,4 +45,38 @@
     color: white;
     font-size: 20px;
     font-family: 'SharpSans2';
+}
+@media screen and (max-width:752px) {
+.logoCenter{
+    justify-content: center !important;
+
+}
+}
+@media screen and (max-width:422px) {
+.logoImg{
+    width: 315px !important;
+
+}
+
+}
+
+@media screen and (max-width:855px) {
+.menu{
+    font-size: 11px !important;
+}
+}
+
+@media screen and (max-width:1120px) {
+    .position{
+      top: 278px !important;
+    }
+    }
+    
+
+
+@media screen and (max-width:748px) {
+.menuNav{
+    display: none !important;
+}
+
 }

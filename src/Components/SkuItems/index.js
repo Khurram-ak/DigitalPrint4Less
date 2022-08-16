@@ -3,11 +3,7 @@ import { Container, Row, Col } from "reactstrap";
 import "./index.css"
 import ProductCard from "../ProductCards"
 import Slide from 'react-reveal/Slide';
-
-import sample from '../../assests/sample.png'
-import sample2 from '../../assests/sample2.png'
-import sample3 from '../../assests/sample3.png'
-import sample4 from '../../assests/sample4.png'
+ 
 import { useEffect, useState } from 'react'
 
 export default function SkuItems() {
@@ -15,10 +11,11 @@ export default function SkuItems() {
     const [skuItems, setSkuItems] = useState()
     useEffect(() => {
 
-        fetch('http:///app.ghaarsay.com//sku/GetSku_CustomerPage?page=1&pageSize=10&companyID=0c5bd553-46c5-440d-8c5a-5ba3353dbf48')
+        fetch('http://api.screenprint4less.com/SKU/36C09645-3BF6-431D-8923-0FDA1BE4A257/C3FCB00C-DA08-43F3-AAE2-F08E0A09136E')
             .then(res => res.json())
             .then(res => {
-                setSkuItems(res.data)})
+                console.log(res)
+                setSkuItems(res)})
 
     }, [])
 

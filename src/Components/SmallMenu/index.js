@@ -9,7 +9,8 @@ export default function SmallMenu({ mainCategory, sendData }) {
     const navigate = useNavigate()
     const [subDisplay, setSubDisplay] = useState(false)
     const [subId, setSubId] = useState('');
-    const [subIdToPass, setSubIdToPass] = useState('');
+    const [subNameToPass, setSubNameToPass] = useState('');
+    const [mainNameToPass, setMainNameToPass] = useState('');
     const [subCategory, setSubCategory] = useState();
 
 
@@ -19,9 +20,13 @@ export default function SmallMenu({ mainCategory, sendData }) {
     // var mainID="844f1f46-0500-442a-ba3f-c3500cd2910b"
     useEffect(() => {
         subId &&
-            axios.get(`http:///app.ghaarsay.com/SubCategory/GetSkuSubCategory_CustomerPage?companyID=0c5bd553-46c5-440d-8c5a-5ba3353dbf48&MainCategoryID=${subId}`)
+            axios.get(`http://api.screenprint4less.com/ProductSubCategory/GetProductSubCategoryByMCID/${subId}`)
                 .then((response) => {
-                    response.data.data.map(item =>setSubIdToPass(item.ID));
+                    // console.log(response)
+                    response.data.map(item =>{
+                        setMainNameToPass(item.mainCategoryID)
+                        setSubNameToPass(item.id)
+                    });
                     setSubCategory(response.data);
                 
                 });
@@ -29,7 +34,7 @@ export default function SmallMenu({ mainCategory, sendData }) {
     }, [subId])
 
 
-    subCategory && subCategory.data.map(item => subCategoryNames.push(item.SubCategoryName))
+    subCategory && subCategory.map(item => subCategoryNames.push(item.subCategoryName))
 
     const demoMethod = () => {
         sendData(false);
@@ -40,15 +45,15 @@ export default function SmallMenu({ mainCategory, sendData }) {
 
         <div onMouseLeave={demoMethod} style={{ display: "flex" }}>
             <div className='column' >
-                {mainCategory && mainCategory.data.map((item, index) => {
+                {mainCategory && mainCategory?.map((item, index) => {
                     return <>
                         <div onMouseEnter={() => {
-                            setSubId(item.ID)
+                            setSubId(item.id)
                             setSubDisplay(true)
                         }}
                             style={{ display: 'flex', }} className='hoverCategory'>
                             <div className='menuItem'>
-                                <p>{item.MainCategoryName} </p>
+                                <p>{item.mainCategoryName} </p>
                             </div>
                             <div className="arrow" >
                                 <i class="fas fa-angle-double-right"></i>
@@ -70,7 +75,7 @@ export default function SmallMenu({ mainCategory, sendData }) {
                             subCategoryNames && subCategoryNames.map(item => {
 
                                 return <div
-                                    onClick={() => {   navigate(`/subCategoryPage/${subIdToPass}`) }}
+                                    onClick={() => { navigate(`/subCategoryPage/${mainNameToPass}/${subNameToPass}`) }}
                                     style={{ display: 'flex', overflow: "auto", borderBottom: "2px solid lightgray" }} className='hoverCategory'>
                                     <div className='menuItem2'>
                                         <p> {item}</p>

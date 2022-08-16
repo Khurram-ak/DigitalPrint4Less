@@ -3,7 +3,7 @@
     /* justify-content: center; */
     flex-direction: column;
     align-items: center;
-    border:"1px solid black"
+    border: "1px solid black"
 
 }
 
@@ -17,16 +17,22 @@
     color: white;
     font-weight: 600 !important;
 }
-.designImg{
-    width: 400px ;
+
+.designImg {
+    max-width: 320px;
 }
 
 @media screen and (max-width:1200px) {
-    .separationLine{
+    .separationLine {
         border: 2px solid blue;
         display: none !important;
     }
-    .serviceBox{
+
+    .serviceBox {
+        margin-top: 14px !important;
+    }
+
+    .visionImg {
+        width: 300px !important;
     }
 }
-

@@ -9,16 +9,9 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import FilterListIcon from '@mui/icons-material/FilterList';
 import ProductCard from "../ProductCards";
 import "./index.css"
-
-
-import sample from '../../assests/sample.png'
-import sample2 from '../../assests/sample2.png'
-import sample3 from '../../assests/sample3.png'
-import sample4 from '../../assests/sample4.png'
-
+  
 import { useNavigate, useParams } from "react-router-dom";
-
-
+ 
 import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
@@ -54,15 +47,17 @@ export default function SubCategoryBody() {
         }
 
     }
-    let { subCategoryId } = useParams();
+    let { subCategoryName,mainCategoryName } = useParams();
+    // console.log(subCategoryName);
     useEffect(() => {
-        subCategoryId &&
-            axios.get(`http:///app.ghaarsay.com/sku/GetSkuBySubCat_CustomerPage?page=1&pageSize=10&companyID=0c5bd553-46c5-440d-8c5a-5ba3353dbf48&subCatID=${subCategoryId}`)
+        subCategoryName &&
+            axios.get(`http://api.screenprint4less.com/SKU/${mainCategoryName}/${subCategoryName}`)
                 .then((response) => {
-                    setSubCategorySku(response.data.data)
+                    console.log(response)
+                    setSubCategorySku(response.data)
                 });
 
-    }, [subCategoryId])
+    }, [subCategoryName])
  
 
     return <>
@@ -233,7 +228,7 @@ export default function SubCategoryBody() {
                     <Row>
                         <Col style={{ display: "flex", flexWrap: "wrap", justifyContent: 'center' }}>
                             {
-                                subCategorySku.map(item => {
+                                subCategorySku?.map(item => {
                                     return <ProductCard skuList={item} />
                                 })
                             }
