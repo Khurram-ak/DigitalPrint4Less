@@ -33,7 +33,6 @@ function SignInModal({ onSignUpClick, onForgetPass, onSignInClick, UserSignIn })
             .then(async (res) => {
                 try {
 
-                    console.log(res.data)
                     if (res.status == 200) {
                         swal("Success!", `User SignIn Successfully`, "success")
                         window.localStorage.setItem("email", email);
@@ -61,7 +60,6 @@ function SignInModal({ onSignUpClick, onForgetPass, onSignInClick, UserSignIn })
                 }
                 catch (e) {
                     swal("Error!", `${e}`, "error");
-                    console.log('Else cond');
                 }
 
             })

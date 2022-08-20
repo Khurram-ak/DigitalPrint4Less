@@ -33,7 +33,6 @@ function SignUpModal({ onSignInClick }) {
         })
             .then(async (res) => {
                 try {
-                    console.log(res.status)
 
                     if (res.data == true) {
                         swal("Success!", `User created Successfully`, "success")
@@ -42,16 +41,13 @@ function SignUpModal({ onSignInClick }) {
                     else {
 
                         swal("Error!", `${res}`, "error");
-                        console.log(res)
 
                     }
 
                 }
                 catch (e) {
-                    console.log(res.status)
 
                     swal("Error!", `${e}`, "error");
-                    console.log('Else cond');
                 }
 
             }

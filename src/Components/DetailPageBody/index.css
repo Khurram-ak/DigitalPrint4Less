@@ -40,6 +40,16 @@
       align-items: center;
       border-radius: 4px;
       margin: 0px 7px;
+      border: 2px solid black;
   }
  
-   
+  .colorBox:hover{
+    border: 2px solid #110072bb;
+
+  }
+ 
+  .sizeBox:hover{
+    border: 2px solid #212121;
+
+
+  }

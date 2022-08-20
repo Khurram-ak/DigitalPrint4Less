@@ -20,8 +20,8 @@ export default function Routing() {
                 
                 <Route path="/" element={<Home />} />
                 <Route path="/home" element={<Home />} />
-                <Route path="/detailPage/:skuId" element={<DetailPage />} />
-                <Route path="/subCategoryPage/:mainCategoryName/:subCategoryName" element={<SubCategoryPage />} />
+                <Route path="/detailPage/:styleCode/:mainId/:subId" element={<DetailPage />} />
+                <Route path="/subCategoryPage/:mainCategoryId/:subCategoryId" element={<SubCategoryPage />} />
                 <Route path="/userProfile" element={<UserProfile/>} />
 
             </Routes>

@@ -22,7 +22,6 @@ export default function SmallMenu({ mainCategory, sendData }) {
         subId &&
             axios.get(`http://api.screenprint4less.com/ProductSubCategory/GetProductSubCategoryByMCID/${subId}`)
                 .then((response) => {
-                    // console.log(response)
                     response.data.map(item =>{
                         setMainNameToPass(item.mainCategoryID)
                         setSubNameToPass(item.id)

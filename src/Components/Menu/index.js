@@ -85,7 +85,6 @@ export default function Menu() {
     const UserSignIn = (token) => {
         setOpen(false)
         setUserSignIn(true)
-        console.log(token)
             window.localStorage.setItem("token", token);
     }
 

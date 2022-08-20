@@ -6,21 +6,19 @@ import { useState, useEffect } from 'react'
 import sample3 from '../../assests/sample3.png'
 
 
-export default function ProductCard({ skuList }) {
+export default function ProductCard({ skuList,mainId,subId }) {
     const navigate = useNavigate()
-    console.log('skusss',skuList);
+    
     
     const [skuImage, setSkuImage] = useState('')
     const [productId, setProductId] = useState('')
-
-    useEffect(() => {
-    }, [skuList])
+ 
 
 
     return <>
         <CardGroup onClick={() =>
              {      
-                 navigate(`/detailPage/${productId}`)
+                 navigate(`/detailPage/${skuList.stylE_NO}/${mainId}/${subId}`)
              }} >
             <Card className="productCard  cardText">
                 <CardImg
@@ -34,11 +32,11 @@ export default function ProductCard({ skuList }) {
                     <CardTitle style={{ fontFamily: "SharpSansBold", fontSize: "19px",fontWeight:"800",color:"#0020A2" }} tag="h5">
                         {skuList.stylE_NO}
                     </CardTitle>
-                    <CardTitle style={{ fontFamily: "open sans", fontSize: "19px",fontWeight:"600" }} tag="h5">
+                    <CardTitle style={{ fontFamily: "open sans", fontSize: "14px",fontWeight:"600" }} tag="h5">
                         {skuList.producT_TITLE}
                     </CardTitle>
                     <CardSubtitle
-                        style={{ fontFamily: "roboto", fontSize: "17px",fontWeight:"700" }}
+                        style={{ fontFamily: "roboto", fontSize: "13px",fontWeight:"700" }}
                         className="mb-2 text-muted"
                         tag="h6"
                     >

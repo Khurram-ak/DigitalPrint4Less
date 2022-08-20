@@ -16,7 +16,6 @@ function ProfilePageBody() {
     let password = window.localStorage.getItem("password");
    
     useEffect(async () => {
-        console.log("Tokennnn",token);
         //USER DETAILS
         axios.post(`http://api.screenprint4less.com/Account/GetUser`,{
     
@@ -70,7 +69,6 @@ function ProfilePageBody() {
 
     const handleAddClick = () => {
         setShippingAddress([...shippingAddress, { shippingAddress: "" }]);
-        console.log(shippingAddress);
     };
 
     const handleInputBillChange = (e, index) => {
@@ -82,7 +80,6 @@ function ProfilePageBody() {
 
     const handleAddBillClick = () => {
         setBillingAddress([...billingAddress, { billingAddress: "" }]);
-        console.log(shippingAddress);
     };
     
     const onSubmitBtn = () => {
@@ -114,7 +111,6 @@ function ProfilePageBody() {
                 },
             }
             ).then((res) => {
-                console.log('billing',res)
                 swal("Success!", `User Details Updated`, "success")
 
             })

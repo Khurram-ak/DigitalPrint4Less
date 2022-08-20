@@ -1,6 +1,6 @@
 .position {
-    position: fixed !important;
-     top: 257px;
+    position: absolute !important;
+     top: 52px;
     /*left: 219px !important; */
     min-width: 6rem;
     z-index: 20;

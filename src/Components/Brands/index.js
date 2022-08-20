@@ -17,7 +17,6 @@ export default function Brands() {
         fetch('http://app.ghaarsay.com/Brand/GetBrands_CustomerPage?companyID=0c5bd553-46c5-440d-8c5a-5ba3353dbf48')
         .then(res=>res.json())
         .then(res=>{
-            console.log(res.data);
             setBrands(res.data)})
 
     },[])

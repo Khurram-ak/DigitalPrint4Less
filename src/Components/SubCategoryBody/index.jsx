@@ -47,17 +47,17 @@ export default function SubCategoryBody() {
         }
 
     }
-    let { subCategoryName,mainCategoryName } = useParams();
-    // console.log(subCategoryName);
+    let { subCategoryId,mainCategoryId } = useParams();
+    // console.log(subCategoryId);
     useEffect(() => {
-        subCategoryName &&
-            axios.get(`http://api.screenprint4less.com/SKU/${mainCategoryName}/${subCategoryName}`)
+        subCategoryId &&
+            axios.get(`http://api.screenprint4less.com/SKU/${mainCategoryId}/${subCategoryId}`)
                 .then((response) => {
-                    console.log(response)
+                    console.log("SUBCATE",response.data)
                     setSubCategorySku(response.data)
                 });
 
-    }, [subCategoryName])
+    }, [subCategoryId])
  
 
     return <>
@@ -229,7 +229,7 @@ export default function SubCategoryBody() {
                         <Col style={{ display: "flex", flexWrap: "wrap", justifyContent: 'center' }}>
                             {
                                 subCategorySku?.map(item => {
-                                    return <ProductCard skuList={item} />
+                                    return <ProductCard skuList={item} mainId={mainCategoryId} subId={subCategoryId}/>
                                 })
                             }
 

@@ -38,22 +38,43 @@ export default function DetailPageBody() {
         boxShadow: 24,
         p: 4,
     };
-    let { skuId } = useParams();
+    let { mainId, subId, styleCode } = useParams();
 
+    const [allDetails, setAllDetails] = useState([]);
     const [skuDetails, setSkuDetails] = useState([]);
     const [skuImages, setSkuImages] = useState([]);
-
+    const [colors, setColors] = useState();
+    const [index, setIndex] = useState(0);
+    var temp = [];
+    var img = [];
     useEffect(() => {
 
-        axios.get(`http:///app.ghaarsay.com/sku/GetSkuDetail_CustomerPage?companyID=0c5bd553-46c5-440d-8c5a-5ba3353dbf48&SkuID=${skuId}`)
+        axios.get(`http://api.screenprint4less.com/SKU/${styleCode}/${mainId}/${subId}`)
             .then((response) => {
+                setAllDetails(response.data)
+                setSkuDetails(response.data[0])
+                response.data.map(item => temp.push(item.coloR_NAME))
+                setColors(temp)
 
-                setSkuDetails(response.data.data)
-                response.data.data.SKUImages.map(item => images.push({ original: item.ImagePath, thumbnail: item.ImagePath }))
-                setSkuImages(images)
+                img.push({ original: response.data[0]?.fronT_FLAT_IMAGE_URL, thumbnail: response.data[0]?.fronT_FLAT_IMAGE_URL })
+                img.push({ original: response.data[0]?.fronT_MODEL_IMAGE_URL, thumbnail: response.data[0]?.fronT_MODEL_IMAGE_URL })
+                console.log(img)
+                // skuImages.push({ original:allDetails[0]?.fronT_MODEL_IMAGE_URL, thumbnail:allDetails[0]?.fronT_MODEL_IMAGE_URL })
             });
+        setSkuImages(img)
 
     }, [])
+
+
+    const currentDataLoad = (index) => {
+        console.log("current FUNC", allDetails[index])
+
+        img.push({ original: allDetails[index]?.fronT_FLAT_IMAGE_URL, thumbnail: allDetails[index]?.fronT_FLAT_IMAGE_URL })
+        img.push({ original: allDetails[index]?.fronT_MODEL_IMAGE_URL, thumbnail: allDetails[index]?.fronT_MODEL_IMAGE_URL })
+        setSkuImages(img)
+
+    }
+
 
     return <>
         <div style={{ borderTop: "1px solid lightgray" }}></div>
@@ -61,9 +82,9 @@ export default function DetailPageBody() {
         <Container style={{ height: "auto", marginBottom: "15px" }}>
             <Row style={{ display: "flex", cursor: 'pointer' }}>
                 <Col lg="6" style={{ display: "flex", justifyContent: "center", alignItems: 'center' }}  >
-                    <ImageGallery
+                    {skuImages && <ImageGallery
                         className="cartImg"
-                        items={skuImages}
+                        items={skuImages && skuImages}
                         // height='1500px'
                         sizes={5500}
                         thumbnailWidth={400}
@@ -72,14 +93,14 @@ export default function DetailPageBody() {
                         useBrowserFullscreen={false}
                         autoPlay={false}
                         infinite={true}
-                    />
+                    />}
                 </Col>
 
                 {/* <img style={{ height: '525px', width: "350px", }} src={data?.SKUImages[0]?.ImagePath} alt='1'  */}
                 <Col lg="6" style={{ padding: "20px", }}>
-                    <h3 style={{ fontFamily: "sharpsans2" }}>{skuDetails && skuDetails.SKUCode}</h3>
-                    <p style={{ color: "gray", fontFamily: "roboto" }}>{skuDetails.SKUDescription}  </p>
-                    <h4 style={{ fontFamily: "sharpsans2" }}> Price:${skuDetails.SalesPrice}  </h4><br></br>
+                    <h3 style={{ fontFamily: "sharpsans2" }}>{skuDetails.producT_TITLE}</h3>
+                    <p style={{ color: "gray", fontFamily: "roboto" }}>{skuDetails.producT_DESCRIPTION}  </p>
+                    <h4 style={{ fontFamily: "sharpsans2" }}> Price:${skuDetails.piecE_PRICE}  </h4><br></br>
                     <h3 style={{ fontSize: "21px", fontFamily: "sharpsans2" }}>Available Size: </h3>
 
                     <div style={{ display: 'flex' }}>
@@ -101,56 +122,14 @@ export default function DetailPageBody() {
                     <br></br>
                     <h3 style={{ fontSize: "21px", fontFamily: "sharpsans2" }}>Available Colors: </h3>
                     <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-                        <div className='colorBox' style={{ marginTop: "5px", backgroundColor: 'Blue' }} >
+                        {
+                            colors?.map((item, index) => {
+                                return <div onClick={() => currentDataLoad(index)} className='colorBox' style={{ marginTop: "5px", backgroundColor: item }} >
 
-                        </div>
-                        <div className='colorBox' style={{ marginTop: "5px", backgroundColor: 'Red' }} >
+                                </div>
 
-                        </div>
-                        <div className='colorBox' style={{ marginTop: "5px", backgroundColor: 'Aqua' }} >
-
-                        </div>
-                        <div className='colorBox' style={{ marginTop: "5px", backgroundColor: 'purple' }} >
-
-                        </div>
-                        <div className='colorBox' style={{ marginTop: "5px", backgroundColor: 'gray' }} >
-
-                        </div>
-                        <div className='colorBox' style={{ marginTop: "5px", backgroundColor: 'yellow' }} >
-
-                        </div>
-                        <div className='colorBox' style={{ marginTop: "5px", backgroundColor: 'Red' }} >
-
-                        </div>
-                        <div className='colorBox' style={{ marginTop: "5px", backgroundColor: 'Aqua' }} >
-
-                        </div>
-                        <div className='colorBox' style={{ marginTop: "5px", backgroundColor: 'purple' }} >
-
-                        </div>
-                        <div className='colorBox' style={{ marginTop: "5px", backgroundColor: 'gray' }} >
-
-                        </div>
-                        <div className='colorBox' style={{ marginTop: "5px", backgroundColor: 'yellow' }} >
-
-                        </div>
-                        <div className='colorBox' style={{ marginTop: "5px", backgroundColor: 'Red' }} >
-
-                        </div>
-                        <div className='colorBox' style={{ marginTop: "5px", backgroundColor: 'Aqua' }} >
-
-                        </div>
-                        <div className='colorBox' style={{ marginTop: "5px", backgroundColor: 'purple' }} >
-
-                        </div>
-                        <div className='colorBox' style={{ marginTop: "5px", backgroundColor: 'gray' }} >
-
-                        </div>
-                        <div className='colorBox' style={{ marginTop: "5px", backgroundColor: 'yellow' }} >
-
-                        </div>
-
-
+                            })
+                        }
                     </div>
                     <br></br>
                     <br></br>
