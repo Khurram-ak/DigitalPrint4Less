@@ -5,6 +5,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Available Scripts
 
 In the project directory, you can run:
+![asd](https://user-images.githubusercontent.com/71689069/201348705-64f818d3-91a4-4c65-bbb6-19fd8252953a.png)
+![asdd](https://user-images.githubusercontent.com/71689069/201348711-f20525c9-21fe-480f-947c-23c40f09940c.png)
+![asq](https://user-images.githubusercontent.com/71689069/201348714-01c9c833-5728-425d-87a1-aa96330cd275.png)
+![assa](https://user-images.githubusercontent.com/71689069/201348719-7939b604-e6ed-47e6-95dd-1586df371e46.png)
+![dd](https://user-images.githubusercontent.com/71689069/201348722-792b2cbc-2080-4537-81d2-c98c3b5567ca.png)
+![a](https://user-images.githubusercontent.com/71689069/201348725-55d8e656-4e5f-4968-a79e-40effee6168f.png)
+![as](https://user-images.githubusercontent.com/71689069/201348728-ccd69448-f9c8-4b01-9068-2e0ea83e79e9.png)
+![asasas](https://user-images.githubusercontent.com/71689069/201348731-767b4ba5-60ec-4781-acbc-e49709e9a42b.png)
 
 ### `npm start`
 
